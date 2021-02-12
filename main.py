@@ -2,7 +2,6 @@ import subprocess
 import os
 import json 
 
-
 #_______________________________________________________________________
 
 def lin():
