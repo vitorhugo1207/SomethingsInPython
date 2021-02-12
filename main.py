@@ -1,6 +1,8 @@
 import subprocess
 import os
-import json 
+import json
+import time
+from ProjetoDownload.main import projectdownload as pd
 
 #_______________________________________________________________________
 
@@ -14,6 +16,9 @@ def info():
     print(output1)
     print(output2)
     print(output3)
+
+def timecont2():
+    time.sleep(2.0)
 
 #_______________________________________________________________________
 
@@ -110,6 +115,10 @@ elif texto == 'apagar':
     else:
         lin()
         print('Não entendi!')
+
+elif texto == "Download Time" or "Tempo de Download":
+    pd()
+    timecont2()
 
 else:
     try:
