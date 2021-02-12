@@ -17,6 +17,7 @@ def info():
     print(output2)
     print(output3)
 
+
 def timecont2():
     time.sleep(2.0)
 
