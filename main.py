@@ -44,7 +44,6 @@ if texto == 'abrir':
         file.close
         # output6 = 'Não entendi!'
         # print(output6)
-        # fn
         lin()
 
 # a função "aprende" só está guardando um item.
