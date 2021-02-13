@@ -66,7 +66,6 @@ elif texto == 'aprende':
         print('Ocorreu um ERRO.')
     finally:
         file.close
-
     lin()
 
 elif texto == 'info':
@@ -118,7 +117,6 @@ elif texto == 'apagar':
 
 elif texto == "Download Time" or "Tempo de Download":
     pd()
-    timecont2()
 
 else:
     try:
@@ -126,3 +124,4 @@ else:
     except:
         print('Não entendi!')
         lin()
+timecont2()
