@@ -2,7 +2,7 @@ import subprocess
 import os
 import json
 import time
-from ProjetoDownload.main import projectdownload as pd
+from downloadTime import projectdownload as pd
 
 # Nota: Colocar as funções em funções para fazer o loop
 

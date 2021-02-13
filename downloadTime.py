@@ -2,7 +2,7 @@ import time
 
 def projectdownload():
     # Data extraction
-    print('What is the size file? (in M = MegaByte, G = GigaByte)')
+    print('What is the size file? (G = GigaByte)')
     sizeFile = input('-> ')
     sizeFile = sizeFile.lower()
     print('What is the your internet speed? (in MegaBite)')
@@ -15,12 +15,11 @@ def projectdownload():
     else:
         print('Ocorreu um erro')
 
-    # Gigabyte to Megabyte
+    # Gigabyte for Megabyte
     if 'g' in sizeFile:
         sizeFile = sizeFile.replace(' ','')
         sizeFile = sizeFile.replace('g','')
-        sizeFile = sizeFile * 1000
-        sizeFile = float(sizeFile)
+        sizeFile = float(sizeFile) * 1000
         print(sizeFile)
 
     # Calc time of download
@@ -38,4 +37,4 @@ def projectdownload():
 
     time.sleep(5.0)
 
-projectdownload()
+# projectdownload()
