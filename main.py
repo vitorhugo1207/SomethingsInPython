@@ -104,39 +104,38 @@ def apagar():
         lin()
         print('Não entendi!')
 
-class main():
-    lin()
-    print('Hi, what must do?')
-    texto = input('-> ')
-    texto = texto.lower()
-    texto = texto.replace(' ','')
-    lin()
+lin()
+print('Hi, what must do?')
+texto = input('-> ')
+texto = texto.lower()
+texto = texto.replace(' ','')
+lin()
 
-    if texto == 'open':
-        abrir()
+if texto == 'open':
+    abrir()
 
-    elif texto == 'lear':
-        aprende()
+elif texto == 'lear':
+    aprende()
 
-    elif texto == 'info':
-        info()
+elif texto == 'info':
+    info()
 
-    elif texto == 'file':
-        arquivo()
+elif texto == 'file':
+    arquivo()
 
-    elif texto == 'zerar':
-        zerar()
+elif texto == 'zerar':
+    zerar()
 
-    elif texto == 'eraser':
-        apagar()
+elif texto == 'eraser':
+    apagar()
 
-    elif texto == 'download time':
-        pd()
+elif texto == 'download time':
+    pd()
 
-    else:
-        try:
-            print(eval(texto))
-        except:
-            print('Não entendi!')
-            lin()
-    timecont2()
+else:
+    try:
+        print(eval(texto))
+    except:
+        print('Não entendi!')
+        lin()
+timecont2()
