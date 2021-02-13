@@ -4,7 +4,6 @@ import json
 import time
 from downloadTime import projectdownload as pd
 
-# Nota: Colocar as funções em funções para fazer o loop
 # Fazer um sistema de dados
 
 #_______________________________________________________________________
@@ -15,7 +14,7 @@ def lin():
 def info():
     output1 = 'Esse programa esta na versão: 0'
     output2 = 'Desenvolvido por IkkiArtz.'
-    output3 = 'Criado no dia 18/10/2020' 
+    output3 = 'Criado no dia 18/10/2020'
     print(output1)
     print(output2)
     print(output3)
@@ -23,16 +22,7 @@ def info():
 def timecont2():
     time.sleep(2.0)
 
-#_______________________________________________________________________
-
-lin()
-print('Olá, o que devo fazer?')
-texto = input('-> ')
-texto = texto.lower()
-texto = texto.replace(' ','')
-lin()
-
-if texto == 'abrir':
+def abrir():
     print('O que quer abrir?')
     respabrir = input('-> ')
     respabrir = respabrir.lower()
@@ -49,9 +39,8 @@ if texto == 'abrir':
         # print(output6)
         lin()
 
-# a função "aprende" só está guardando um item.
-
-elif texto == 'aprende':
+def aprende():
+    # a função "aprende" só está guardando um item.
     chave = input('Digite a frase: ')
     valor = input('Digite o caminho: ')
     chave = chave.lower()
@@ -71,10 +60,7 @@ elif texto == 'aprende':
         file.close
     lin()
 
-elif texto == 'info':
-    info()
-
-elif texto == 'arquivo':
+def arquivo():
     try:
         file = open('Arquivo.json', 'r')
         file.close
@@ -84,7 +70,7 @@ elif texto == 'arquivo':
         file.close
         print('Arquivo criado!')
 
-elif texto == 'zerar':
+def zerar():
     print('Tem certeza que deseja apagar a memoria do script?')
     output7 = input('-> ')
     output7 = output7.lower()
@@ -101,7 +87,7 @@ elif texto == 'zerar':
         lin()
         print('Não entendi!')
 
-elif texto == 'apagar':
+def apagar():
     lin()
     print('Tem certeza que deseja apagar o arquivo da memoria do script?')
     output4 = input('-> ')
@@ -118,13 +104,39 @@ elif texto == 'apagar':
         lin()
         print('Não entendi!')
 
-elif texto == "Download Time" or "Tempo de Download":
-    pd()
+class main():
+    lin()
+    print('Hi, what must do?')
+    texto = input('-> ')
+    texto = texto.lower()
+    texto = texto.replace(' ','')
+    lin()
 
-else:
-    try:
-        print(eval(texto))
-    except:
-        print('Não entendi!')
-        lin()
-timecont2()
+    if texto == 'open':
+        abrir()
+
+    elif texto == 'lear':
+        aprende()
+
+    elif texto == 'info':
+        info()
+
+    elif texto == 'file':
+        arquivo()
+
+    elif texto == 'zerar':
+        zerar()
+
+    elif texto == 'eraser':
+        apagar()
+
+    elif texto == 'download time':
+        pd()
+
+    else:
+        try:
+            print(eval(texto))
+        except:
+            print('Não entendi!')
+            lin()
+    timecont2()
