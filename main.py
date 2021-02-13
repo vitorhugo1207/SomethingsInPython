@@ -4,6 +4,8 @@ import json
 import time
 from ProjetoDownload.main import projectdownload as pd
 
+# Nota: Colocar as funções em funções para fazer o loop
+
 #_______________________________________________________________________
 
 def lin():
