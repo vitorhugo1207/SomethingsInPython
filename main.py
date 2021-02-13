@@ -42,8 +42,9 @@ if texto == 'abrir':
     except:
         file = open('Arquivo'+'.json','r')
         file.close
-        #output6 = 'Não entendi!'
-        #print(output6)
+        # output6 = 'Não entendi!'
+        # print(output6)
+        # fn
         lin()
 
 # a função "aprende" só está guardando um item.
