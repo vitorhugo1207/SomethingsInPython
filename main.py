@@ -5,6 +5,7 @@ import time
 from downloadTime import projectdownload as pd
 
 # Nota: Colocar as funções em funções para fazer o loop
+# Fazer um sistema de dados
 
 #_______________________________________________________________________
 

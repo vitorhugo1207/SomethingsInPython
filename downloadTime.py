@@ -12,15 +12,13 @@ def projectdownload():
     biteByteSpeed = int(netSpeed) / 8
     if biteByteSpeed == 1.0:
         biteByteSpeed = 0.9
-    else:
-        print('Ocorreu um erro')
 
     # Gigabyte for Megabyte
     if 'g' in sizeFile:
         sizeFile = sizeFile.replace(' ','')
         sizeFile = sizeFile.replace('g','')
         sizeFile = float(sizeFile) * 1000
-        print(sizeFile)
+        # print(sizeFile)
 
     # Calc time of download
     timeSec = float(sizeFile) / float(biteByteSpeed)
@@ -35,6 +33,6 @@ def projectdownload():
     # Show data
     print(f'The download time of {sizeFile} Megabyte is: \n {timeHour} horas; \n {timeMin} Minutos; \n {timeSec} Segundos.')
 
-    time.sleep(5.0)
+    time.sleep(2.0)
 
 # projectdownload()
