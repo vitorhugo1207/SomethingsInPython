@@ -2,7 +2,8 @@ import subprocess
 import os
 import json
 import time
-from downloadTime import projectdownload as pd
+from downloadTime import projectdownload
+from dados import *
 
 # Fazer um sistema de dados
 
@@ -104,6 +105,7 @@ def apagar():
         lin()
         print('Não entendi!')
 
+# Main
 lin()
 print('Hi, what must do?')
 texto = input('-> ')
@@ -114,7 +116,7 @@ lin()
 if texto == 'open':
     abrir()
 
-elif texto == 'lear':
+elif texto == 'learn':
     aprende()
 
 elif texto == 'info':
@@ -130,7 +132,10 @@ elif texto == 'eraser':
     apagar()
 
 elif texto == 'download time':
-    pd()
+    projectdownload()
+
+elif 'd20' in texto:
+    d20()
 
 else:
     try:
