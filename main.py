@@ -5,7 +5,6 @@ import time
 from downloadTime import projectdownload
 from dados import *
 
-# Fazer um sistema de dados
 
 #_______________________________________________________________________
 
@@ -105,7 +104,8 @@ def apagar():
         lin()
         print('Não entendi!')
 
-# Main
+
+# _________________Main______________________
 lin()
 print('Hi, what must do?')
 texto = input('-> ')
@@ -136,6 +136,8 @@ elif texto == 'download time':
 
 elif 'd20' in texto:
     d20()
+    lin()
+    time.sleep(3.0)
 
 else:
     try:

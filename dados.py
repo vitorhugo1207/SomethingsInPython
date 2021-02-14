@@ -2,8 +2,7 @@ from random import *
 
 
 def d20():
-    dd20 = (randrange(0, 20))
-    #txt = int(input('Adcional: '))
-    print(d20)
+    d20 = (randrange(0, 20))
+    print(f'Your roll: {d20}')
 
 #d20()
