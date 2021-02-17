@@ -9,7 +9,7 @@ def projectdownload():
     netSpeed = input('-> ')
 
     # MegaBite for MegaByte
-    biteByteSpeed = int(netSpeed) / 8
+    biteByteSpeed = float(netSpeed) / 8
     if biteByteSpeed == 1.0:
         biteByteSpeed = 0.9
 
@@ -35,4 +35,5 @@ def projectdownload():
 
     time.sleep(2.0)
 
-# projectdownload()
+if __name__ == '__main__':
+    projectdownload()
