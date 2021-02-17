@@ -1,0 +1,1 @@
+print('Kk eae men', end=' |')
