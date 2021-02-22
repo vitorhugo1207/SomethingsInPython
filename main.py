@@ -5,7 +5,6 @@ import time
 from downloadTime import projectdownload
 from dados import *
 
-
 #_______________________________________________________________________
 
 def lin():
