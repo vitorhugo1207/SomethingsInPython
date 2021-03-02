@@ -3,7 +3,7 @@ import os
 import json
 import time
 from downloadTime import projectdownload
-from dados import *
+from dice import dice
 
 #_______________________________________________________________________
 
@@ -105,43 +105,45 @@ def apagar():
 
 
 # _________________Main______________________
-lin()
-print('Hi, what must do?')
-texto = input('-> ')
-texto = texto.lower()
-texto = texto.replace(' ','')
-lin()
 
-if texto == 'open':
-    abrir()
-
-elif texto == 'learn':
-    aprende()
-
-elif texto == 'info':
-    info()
-
-elif texto == 'file':
-    arquivo()
-
-elif texto == 'zerar':
-    zerar()
-
-elif texto == 'eraser':
-    apagar()
-
-elif texto == 'download time':
-    projectdownload()
-
-elif 'd20' in texto:
-    d20()
+if __name__ == '__main__':
     lin()
-    time.sleep(3.0)
+    print('Hi, what must do?')
+    texto = input('-> ')
+    texto = texto.lower()
+    texto = texto.replace(' ','')
+    lin()
 
-else:
-    try:
-        print(eval(texto))
-    except:
-        print('Não entendi!')
+    if texto == 'open':
+        abrir()
+
+    elif texto == 'learn':
+        aprende()
+
+    elif texto == 'info':
+        info()
+
+    elif texto == 'file':
+        arquivo()
+
+    elif texto == 'zerar':
+        zerar()
+
+    elif texto == 'eraser':
+        apagar()
+
+    elif texto == 'download time':
+        projectdownload()
+
+    elif 'd20' in texto:
+        dice()
         lin()
-timecont2()
+        time.sleep(3.0)
+
+    else:
+        try:
+            print(eval(texto))
+        except:
+            print('Não entendi!')
+            lin()
+    timecont2()
