@@ -1,0 +1,6 @@
+name = str(input('Your name: ')).strip()
+nameList = name.split()
+print('Your first name is: {}'.format(nameList[0]))
+print('Your last name is: {}'.format(nameList[len(nameList)-1]))
+print(len(nameList))
+print(nameList)
