@@ -7,7 +7,7 @@ def dice():
     print(f'Your roll: {diceRoll}')
 
 def diceMain(self):
-    roll = int(randrange(0, diceT))
+    roll: int = (randrange(0, diceT))
     print(f'Your roll: {roll}')
 
 
@@ -36,7 +36,11 @@ if __name__ == '__main__':
         diceT = int(diceT)
         diceA = int(diceA)
 
+        # Self
+        diceT = self=diceT
+        diceA = self=diceA
+
         # Loop if diceA > 1
         for X in range(diceA):
-            diceMain(self=diceT)
-        time.sleep(3.0)
+            diceMain(self)
+        # time.sleep(3.0)
