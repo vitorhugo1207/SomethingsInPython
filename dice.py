@@ -3,14 +3,40 @@ import time
 
 
 def dice():
-    d20 = (randrange(0, 20))
-    print(f'Your roll: {d20}')
+    diceRoll = (randrange(0, 20))
+    print(f'Your roll: {diceRoll}')
 
 def diceMain(self):
-    d20 = (randrange(0, roll))
-    print(f'Your roll: {d20}')
+    roll = int(randrange(0, diceT))
+    print(f'Your roll: {roll}')
+
 
 if __name__ == '__main__':
-    roll = int(input('-> ').replace('d', ''))
-    diceMain(self=roll)
-    time.sleep(3.0)
+    while True:
+        # Data extraction
+        print('-' * 20)
+        dice = str(input('-> ').replace('d', ''))
+
+        if dice in 'exit':
+            break
+
+        # Extraction amount times loop
+        diceA = dice[:1]
+        # Extraction interval of draw
+        diceT = dice[1:]
+
+        # Bonus extraction
+        if '+' in dice:
+            diceMore = dice.find('+')
+            rollBonus = dice[diceMore:].replace('+', '')
+            rollBonus = int(rollBonus)
+            print(rollBonus)
+
+        # Int
+        diceT = int(diceT)
+        diceA = int(diceA)
+
+        # Loop if diceA > 1
+        for X in range(diceA):
+            diceMain(self=diceT)
+        time.sleep(3.0)

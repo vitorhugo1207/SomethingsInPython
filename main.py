@@ -1,9 +1,10 @@
 import subprocess
 import os
 import json
-import time
+from time import *
 from downloadTime import projectdownload
-from dice import dice
+from dice import *
+
 
 #_______________________________________________________________________
 
@@ -33,7 +34,7 @@ def abrir():
         lin()
     except:
         file = open('Arquivo'+'.json','r')
-        file.close
+        file.close()
         # output6 = 'Não entendi!'
         # print(output6)
         lin()
@@ -47,7 +48,7 @@ def aprende():
     try:
         file = open('Arquivo.json','w')
         json.dump({chave:valor}, file, indent=2)
-        file.close
+        file.close()
         print('Aprendido!')
         # file = open('Arquivo'+'.json','r')
         # Arquivo = json.load(file)
@@ -56,7 +57,7 @@ def aprende():
     except:
         print('Ocorreu um ERRO.')
     finally:
-        file.close
+        file.close()
     lin()
 
 def arquivo():
