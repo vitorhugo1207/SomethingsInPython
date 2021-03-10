@@ -1,29 +1,29 @@
 from random import *
 import time
 
+# Mostrar a data da rolagem de dados, calcular o bonus e tratar erros
+
 
 def dice():
     diceRoll = (randrange(0, 20))
     print(f'Your roll: {diceRoll}')
 
-def diceMain(self):
-    roll: int = (randrange(0, diceT))
-    print(f'Your roll: {roll}')
+def diceMain():
+    roll = randrange(0, diceT)
+    return roll
 
 
 if __name__ == '__main__':
     while True:
         # Data extraction
         print('-' * 20)
-        dice = str(input('-> ').replace('d', ''))
+        dice = str(input('-> ').replace('d', '')).replace(' ', '') # Data extraction, remove "d" and spáce.
 
-        if dice in 'exit':
+        if dice in 'exit': # Break the Loop
             break
 
-        # Extraction amount times loop
-        diceA = dice[:1]
-        # Extraction interval of draw
-        diceT = dice[1:]
+        diceA = dice[:1] # Extraction amount times loop
+        diceT = dice[1:] # Extraction interval of draw
 
         # Bonus extraction
         if '+' in dice:
@@ -36,11 +36,18 @@ if __name__ == '__main__':
         diceT = int(diceT)
         diceA = int(diceA)
 
-        # Self
-        diceT = self=diceT
-        diceA = self=diceA
+        # Created a list
+        rollList = []
 
         # Loop if diceA > 1
         for X in range(diceA):
-            diceMain(self)
+            rollList.append(diceMain())
+
+        # Sum List of dice roll
+        rollTotal = sum(rollList)
+
+        # Show datas
+        print(f'List of dice roll: {rollList}')
+        print(f'Total of dice roll: {rollTotal}')
+
         # time.sleep(3.0)
