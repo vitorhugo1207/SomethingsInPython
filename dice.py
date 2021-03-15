@@ -1,53 +1,63 @@
 from random import *
-import time
+from datetime import datetime
 
-# Mostrar a data da rolagem de dados, calcular o bonus e tratar erros
+# Tratar erros
 
-
-def dice():
-    diceRoll = (randrange(0, 20))
-    print(f'Your roll: {diceRoll}')
 
 def diceMain():
-    roll = randrange(0, diceT)
+    roll = randrange(diceMin, diceT) # diceMin (Minimum) between diceT (Total)
     return roll
 
 
 if __name__ == '__main__':
     while True:
         # Data extraction
-        print('-' * 20)
-        dice = str(input('-> ').replace('d', '')).replace(' ', '') # Data extraction, remove "d" and spáce.
+        print('-+' * 20) # Line
+        dice = str(input('-> ').replace('d', '')).replace(' ', '') # Data extraction, remove "d" and space.
 
         if dice in 'exit': # Break the Loop
             break
 
+        if dice == 'help':
+            pass
+
         diceA = dice[:1] # Extraction amount times loop
         diceT = dice[1:] # Extraction interval of draw
-
-        # Bonus extraction
-        if '+' in dice:
-            diceMore = dice.find('+')
-            rollBonus = dice[diceMore:].replace('+', '')
-            rollBonus = int(rollBonus)
-            print(rollBonus)
-
-        # Int
-        diceT = int(diceT)
-        diceA = int(diceA)
 
         # Created a list
         rollList = []
 
+        # Bonus extraction
+        if '+' in dice:
+            diceMore = dice.find('+') # Find position of the roll bonus
+            rollBonus = dice[diceMore:].replace('+', '') # Remove the dice and "+"
+            diceT = dice[diceMore:].replace('+', '') # Remove the dice and "+"
+            dice = dice[diceMore:].replace('+', '') # Remove the dice and "+"
+            rollBonus = int(rollBonus) # Str for Int
+
+        # Str for Int
+        diceT = int(diceT)
+        diceA = int(diceA)
+
+        # Created a variable diceMin
+        diceMin = 0 # The minimum for start roll dice
+
         # Loop if diceA > 1
         for X in range(diceA):
-            rollList.append(diceMain())
+            rollList.append(diceMain()) # Call def and save data at list
 
-        # Sum List of dice roll
-        rollTotal = sum(rollList)
+        # Sum List of dice roll and roll bonus
+        try:
+            rollTotal = sum(rollList) + rollBonus # Try sum list and roll
+            rollList.append(f'+{rollBonus}') # Add rollBonus at list
+            rollBonus = '' # Clean variable rollBonus
+        except:
+            rollTotal = sum(rollList) # Sum if not has rollBonus
 
-        # Show datas
+        # Data show
+        timenow = datetime.now()
+        time = timenow.strftime('%d/%m/%y at %H:%M:%S')
+        print(time)
         print(f'List of dice roll: {rollList}')
         print(f'Total of dice roll: {rollTotal}')
-
         # time.sleep(3.0)
