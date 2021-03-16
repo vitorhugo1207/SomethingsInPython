@@ -24,7 +24,6 @@ if __name__ == '__main__':
         lin() # Line
         dice = str(input('-> ').replace(' ', '').lower()) # Data extraction, remove space and letter in lower
 
-
         if dice == 'exit': # Break the Loop
             break
 
@@ -46,9 +45,11 @@ if __name__ == '__main__':
         if '+' in dice:
             print('Essa função não estã funcionando direito')
             diceMore = dice.find('+') # Find position of the scroll bonus
-            diceT = diceT[:diceMore].replace('+', '') # Remove the dice and "+"
             rollBonus = dice[diceMore:].replace('+', '') # Remove the dice and "+"
+            diceT = diceT[:diceMore -1].replace('+', '') # Remove the dice and "+"
             rollBonus = int(rollBonus) # Str for Int
+            if len(diceT) > 2:
+                diceT = diceT[:2]
             print(diceT, diceA, rollBonus)
 
         if '-' in dice:
@@ -60,7 +61,7 @@ if __name__ == '__main__':
 
         # __Str for Int__
         try:
-            diceT = int(diceT) + 1
+            diceT = int(diceT) + 1 # Counting with the 0
             diceA = int(diceA)
         except:
             error()
