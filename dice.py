@@ -71,8 +71,11 @@ if __name__ == '__main__':
         rollList = [] # Created a list
 
         # __Loop of scroll dice time__
-        for X in range(diceA):
-            rollList.append(diceMain()) # Call def and save data at list
+        try:
+            for X in range(diceA):
+                rollList.append(diceMain()) # Call def and save data at list
+        except:
+            error()
 
         # __Sum List of dice roll and roll bonus__
         if '+' in dice:
