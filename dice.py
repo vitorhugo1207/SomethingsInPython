@@ -1,4 +1,4 @@
-from random import *
+from random import randrange
 from datetime import datetime
 from time import sleep
 
@@ -31,6 +31,8 @@ if __name__ == '__main__':
         if dice == 'help': # Help
             pass
 
+        if not 'd' in dice:
+            error()
 
         # __Dice scroll times__
         diceFindD = dice.find('d') # Find "d" position
@@ -40,20 +42,21 @@ if __name__ == '__main__':
 
         diceT = dice[diceFindD:].replace('d', '') # Extraction interval of draw
 
-
         # __Bonus extraction__
         if '+' in dice:
+            print('Essa função não estã funcionando direito')
             diceMore = dice.find('+') # Find position of the scroll bonus
+            diceT = diceT[:diceMore].replace('+', '') # Remove the dice and "+"
             rollBonus = dice[diceMore:].replace('+', '') # Remove the dice and "+"
-            diceT = dice[diceMore:].replace('+', '') # Remove the dice and "+"
             rollBonus = int(rollBonus) # Str for Int
+            print(diceT, diceA, rollBonus)
 
         if '-' in dice:
+            print('Essa função não estã funcionando direito')
             diceLess = dice.find('-') # Find position of the scroll bonus
             rollBonus = dice[diceLess:].replace('-', '') # Remove the dice and "-"
-            diceT = dice[diceLess:].replace('-', '') # Remove the dice and "-"
+            diceT = dice.replace('-', '') # Remove the dice and "-"
             rollBonus = int(rollBonus) # Str for Int
-
 
         # __Str for Int__
         try:
@@ -62,39 +65,32 @@ if __name__ == '__main__':
         except:
             error()
 
-
         # __Created a variable diceMin__
         diceMin = 0 # The minimum for start scroll dice
 
-
         rollList = [] # Created a list
-
 
         # __Loop of scroll dice time__
         for X in range(diceA):
             rollList.append(diceMain()) # Call def and save data at list
-
 
         # __Sum List of dice roll and roll bonus__
         if '+' in dice:
             rollTotal = sum(rollList) + rollBonus # Sum list and roll
             rollList.append(f'+{rollBonus}') # Add rollBonus at list
             rollBonus = '' # Clean variable rollBonus
-        else:
-            rollTotal = sum(rollList) # Sum if not has rollBonus
 
-        if '-' in dice:
+        elif '-' in dice:
             rollTotal = sum(rollList) - rollBonus # subtract list and roll
             rollList.append(f'-{rollBonus}') # Add rollBonus at list
             rollBonus = '' # Clean variable rollBonus
         else:
             rollTotal = sum(rollList) # Sum if not has rollBonus
 
-
         # __Data show__
         timenow = datetime.now() # Acquiring time of scrolling dice
         time = timenow.strftime('%d/%m/%y at %H:%M:%S') # Formatting time of scrolling dice
         print(time) # Show time of scrolling dice
-        if len(rollList) >= 1:
+        if len(rollList) > 1:
             print(f'List of dice roll: {rollList}') # Show list of scroll dice and bonus
         print(f'Total of dice roll: {rollTotal}') # Show total of scroll dice and bonus
