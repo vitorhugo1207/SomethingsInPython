@@ -8,7 +8,6 @@ def lin():
 
 def reset():
     startfile("C:/Users/Vitor/DocumentosTrue/!-Programação/Python/Project-Ikki/main.py")
-    exit()
 
 
 dataLimit = 50
@@ -17,8 +16,6 @@ data = input('Which?\n-> ')
 while True:
     if data == 'exit':
         break
-    if data == 'reset':
-        reset()
 
     if data == 'sum':
         sum1 = int(randrange(0, dataLimit))
@@ -31,8 +28,6 @@ while True:
 
         if totalSelf == 'exit':
             break
-        if totalSelf == 'reset':
-            reset()
 
         totalSelf = int(totalSelf)
 
@@ -51,8 +46,6 @@ while True:
 
         if totalSelf == 'exit':
             break
-        if totalSelf == 'reset':
-            reset()
 
         totalSelf = int(totalSelf)
 
@@ -71,8 +64,6 @@ while True:
 
         if totalSelf == 'exit':
             break
-        if totalSelf == 'reset':
-            reset()
 
         totalSelf = int(totalSelf)
 
@@ -91,8 +82,6 @@ while True:
 
         if totalSelf == 'exit':
             break
-        if totalSelf == 'reset':
-            reset()
 
         totalSelf = int(totalSelf)
 
