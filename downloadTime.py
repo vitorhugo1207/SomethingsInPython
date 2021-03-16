@@ -5,7 +5,7 @@ def projectdownload():
     print('What is the size file? (G = GigaByte)')
     sizeFile = input('-> ')
     sizeFile = sizeFile.lower()
-    print('What is the your internet speed? (in MegaBite)')
+    print('What is the your internet speed?')
     netSpeed = input('-> ')
 
     # MegaBite for MegaByte

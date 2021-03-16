@@ -15,13 +15,13 @@ if __name__ == '__main__':
         print('-+' * 20) # Line
         dice = str(input('-> ').replace('d', '')).replace(' ', '') # Data extraction, remove "d" and space.
 
-        if dice in 'exit': # Break the Loop
+        if dice == 'exit': # Break the Loop
             break
 
-        if dice == 'help':
+        if dice == 'help': # Help
             pass
 
-        diceA = dice[:1] # Extraction amount times loop
+        diceA = dice[:1] # Extraction time of dice roll
         diceT = dice[1:] # Extraction interval of draw
 
         # Created a list
@@ -32,7 +32,12 @@ if __name__ == '__main__':
             diceMore = dice.find('+') # Find position of the roll bonus
             rollBonus = dice[diceMore:].replace('+', '') # Remove the dice and "+"
             diceT = dice[diceMore:].replace('+', '') # Remove the dice and "+"
-            dice = dice[diceMore:].replace('+', '') # Remove the dice and "+"
+            rollBonus = int(rollBonus) # Str for Int
+
+        if '-' in dice:
+            diceLess = dice.find('-') # Find position of the roll bonus
+            rollBonus = dice[diceLess:].replace('-', '') # Remove the dice and "-"
+            diceT = dice[diceLess:].replace('-', '') # Remove the dice and "-"
             rollBonus = int(rollBonus) # Str for Int
 
         # Str for Int
@@ -47,11 +52,18 @@ if __name__ == '__main__':
             rollList.append(diceMain()) # Call def and save data at list
 
         # Sum List of dice roll and roll bonus
-        try:
-            rollTotal = sum(rollList) + rollBonus # Try sum list and roll
+        if '+' in dice:
+            rollTotal = sum(rollList) + rollBonus # Sum list and roll
             rollList.append(f'+{rollBonus}') # Add rollBonus at list
             rollBonus = '' # Clean variable rollBonus
-        except:
+        else:
+            rollTotal = sum(rollList) # Sum if not has rollBonus
+
+        if '-' in dice:
+            rollTotal = sum(rollList) - rollBonus # subtract list and roll
+            rollList.append(f'-{rollBonus}') # Add rollBonus at list
+            rollBonus = '' # Clean variable rollBonus
+        else:
             rollTotal = sum(rollList) # Sum if not has rollBonus
 
         # Data show
