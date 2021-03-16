@@ -1,5 +1,5 @@
-import random
-import os
+from random import randrange
+from os import startfile
 
 
 def lin():
@@ -7,7 +7,7 @@ def lin():
 
 
 def reset():
-    os.startfile("C:/Users/Vitor/DocumentosTrue/!-Programação/Python/Project-Ikki/main.py")
+    startfile("C:/Users/Vitor/DocumentosTrue/!-Programação/Python/Project-Ikki/main.py")
     exit()
 
 
@@ -17,10 +17,12 @@ data = input('Which?\n-> ')
 while True:
     if data == 'exit':
         break
+    if data == 'reset':
+        reset()
 
     if data == 'sum':
-        sum1 = int(random.randrange(0, dataLimit))
-        sum2 = int(random.randrange(0, dataLimit))
+        sum1 = int(randrange(0, dataLimit))
+        sum2 = int(randrange(0, dataLimit))
         sumTotal = sum1 + sum2
         sumTotal = int(sumTotal)
 
@@ -39,9 +41,9 @@ while True:
         else:
             print(f'You is wrong: {sum1} + {sum2} = {sumTotal}.')
 
-    if data == 'subtracton':
-        sum1 = int(random.randrange(0, dataLimit))
-        sum2 = int(random.randrange(0, dataLimit))
+    if data == 'subtraction':
+        sum1 = int(randrange(0, dataLimit))
+        sum2 = int(randrange(0, dataLimit))
         sumTotal = sum1 - sum2
 
         lin()
@@ -56,14 +58,12 @@ while True:
 
         if totalSelf == sumTotal:
             print(f'You is right: {sum1} - {sum2} = {sumTotal}.')
-        if totalSelf == 'exit':
-            break
         else:
             print(f'You is wrong: {sum1} - {sum2} = {sumTotal}.')
 
     if data == 'multiplication':
-        sum1 = int(random.randrange(0, dataLimit))
-        sum2 = int(random.randrange(0, dataLimit))
+        sum1 = int(randrange(0, dataLimit))
+        sum2 = int(randrange(0, dataLimit))
         sumTotal = sum1 * sum2
 
         lin()
@@ -78,14 +78,12 @@ while True:
 
         if totalSelf == sumTotal:
             print(f'You is right: {sum1} * {sum2} = {sumTotal}.')
-        if totalSelf == 'exit':
-            break
         else:
             print(f'You is wrong: {sum1} * {sum2} = {sumTotal}.')
 
     if data == 'division':
-        sum1 = int(random.randrange(0, dataLimit))
-        sum2 = int(random.randrange(0, dataLimit))
+        sum1 = int(randrange(0, dataLimit))
+        sum2 = int(randrange(0, dataLimit))
         sumTotal = sum1 / sum2
 
         lin()
@@ -100,10 +98,5 @@ while True:
 
         if totalSelf == sumTotal:
             print(f'You is right: {sum1} / {sum2} = {sumTotal}.')
-        if totalSelf == 'exit':
-            break
         else:
             print(f'You is wrong: {sum1} / {sum2} = {sumTotal}.')
-
-    if data == 'reset':
-        reset()
