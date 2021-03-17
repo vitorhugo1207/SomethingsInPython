@@ -33,7 +33,7 @@ frase2 = frase.split()
 
 #Sem o [] mostra a lista frase2
 #Dicionar [qual str] [qual palavra]
-print(frase2[4] [1])
+print(frase2[1] [0])
 
 #Outros
 join()
