@@ -10,7 +10,7 @@ def reset():
     startfile("C:/Users/Vitor/DocumentosTrue/!-Programação/Python/Project-Ikki/main.py")
 
 
-dataLimit = 50
+dataLimit = 100
 
 data = input('Which?\n-> ')
 while True:
