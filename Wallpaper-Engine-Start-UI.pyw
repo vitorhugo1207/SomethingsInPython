@@ -16,7 +16,7 @@ while True:
     if events == sg.WINDOW_CLOSED:
         break
     if events == 'Yes':
-        os.startfile('E:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\wallpaper32.exe')
+        os.startfile('D:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\wallpaper32.exe')
         break
     if events == 'No':
         break
