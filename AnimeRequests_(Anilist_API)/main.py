@@ -4,7 +4,7 @@ from query import *
 # from variables import *
 
 url = "https://graphql.anilist.co"
-variables = ''
+
 
 def get_information(url):
     if search.isnumeric():
@@ -26,8 +26,9 @@ def get_information(url):
 
 def main():
     response = get_information(url)
-    response = response.json()
-    print(response['data'])
+    test = json.loads(response.text)
+    response = test["data"]["Page"]["media"]
+    print(response)
 
 
 search = "Fate/Zero"
