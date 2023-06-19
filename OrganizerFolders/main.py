@@ -15,8 +15,10 @@ types = {".txt": "Text/",
          ".rar": "Compacted/",
          ".7zip": "Compacted/",
          ".iso": "iso/",
-         ".torrent": "Torrent/"}
-
+         ".torrent": "Torrent/",
+         ".xlsx": "Documents/",
+         ".xls": "Documents/",}
+         
 def organize(folderName, file):
     countDup = 2
     try:
