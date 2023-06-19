@@ -1,7 +1,7 @@
 import os
 import time
 
-path = "C:/Users/vitor/Desktop/OrganizerFolders/testAmbient/"
+path = "Your/Path"
 
 types = {".txt": "Text/", 
          ".png": "Image/", 
