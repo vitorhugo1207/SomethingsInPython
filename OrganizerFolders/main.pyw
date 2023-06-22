@@ -28,7 +28,8 @@ types = {".txt": "Text/",
          ".pyw": "Script/",
          ".js": "Script/",
          ".c": "Script/",
-         ".cpp": "Script/"}
+         ".cpp": "Script/",
+         ".gif":"Image/"}
 
 def organize(folderName, file):
     countDup = 2
