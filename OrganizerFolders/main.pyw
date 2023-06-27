@@ -1,7 +1,7 @@
 import os
 import time
 
-path = "/your/path/"
+# path = "/your/path/"
 
 types = {".txt": "Text/", 
          ".png": "Image/", 
@@ -47,6 +47,9 @@ def organize(folderName, file):
             if file == folderFile:
                 countDup += 1
         os.rename(f"{path}{file}", f"{path}{folderName}{os.path.splitext(file)[0]} ({countDup}){os.path.splitext(file)[1]}")
+
+    except PermissionError: # When another program is using the file
+        return
 
 def verify():
     otherFiles = []
