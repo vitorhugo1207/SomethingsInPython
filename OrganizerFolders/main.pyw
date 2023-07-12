@@ -1,7 +1,8 @@
 import os
 import time
+from windows_toasts import WindowsToaster, ToastText1
 
-# path = "/your/path/"
+path = "C:/Users/vitor/Downloads/"
 
 types = {".txt": "Text/", 
          ".png": "Image/", 
@@ -30,7 +31,8 @@ types = {".txt": "Text/",
          ".c": "Script/",
          ".cpp": "Script/",
          ".gif":"Image/",
-         ".appinstaller":"Executables/"}
+         ".appinstaller":"Executables/",
+         ".msi": "Executables/"}
 
 def organize(folderName, file):
     countDup = 2
@@ -51,23 +53,34 @@ def organize(folderName, file):
     except PermissionError: # When another program is using the file
         return
 
+def notification(file, folderName):
+    newToast = ToastText1()
+    newToast.SetBody(f'Arquivo {file} moved to {folderName.replace("/", "")}. \nClick to open folder.')
+    pathReplaced = path.replace("/", "\\")
+    folderNameReplaced = folderName.replace("/", "\\")
+    newToast.on_activated = lambda _: os.system(f'explorer "{pathReplaced}{folderNameReplaced}"')
+    wintoaster.show_toast(newToast)
+
 def verify():
     otherFiles = []
     for file in files:
         for type, folderName in types.items():
             if os.path.splitext(file)[1] == type: # File Known
                 organize(folderName, file)
+                notification(file, folderName)
             else:
                 count =+ 1
             
             if count - 1 == len(type) and os.path.isfile(f"{path}/{file}") and os.path.splitext(file)[1] == None and not os.path.splitext(file)[1] == ".tmp":
                 otherFiles.append(file)
-                print(otherFiles)
+                notification(file, folderName)
     
     for otherFile in otherFiles:
         organize("Others/", otherFile)
 
-while(1):
-    files = os.listdir(path)
-    verify()
-    time.sleep(2)
+if __name__ == '__main__':
+    wintoaster = WindowsToaster('Organizer Folder')
+    while(1):
+        files = os.listdir(path)
+        verify()
+        time.sleep(2)
